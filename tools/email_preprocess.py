@@ -34,9 +34,9 @@ def preprocess(words_file = "../tools/word_data.pkl", authors_file="../tools/ema
     words_file_handler = open(words_file, "rb")
     word_data = joblib.load(words_file_handler)
 
-    ### test_size is the percentage of events assigned to the test set
+    ### test_size is the percentage of events assigned to the test sets
     ### (remainder go into training)
-    features_train, features_test, labels_train, labels_test = train_test_split(word_data, authors, test_size=0.1, random_state=42)
+    features_train, features_test, labels_train, labels_test = train_test_split(word_data, authors, test_size=0.8, random_state=42)
 
 
     ### text vectorization--go from strings to lists of numbers
